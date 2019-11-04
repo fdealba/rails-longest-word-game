@@ -1,0 +1,11 @@
+<% @letters.each do |letter| %>
+<span><%= letter %></span>
+<% end %>
+
+<h5>What is the longest word you can find?</h5>
+<form action="score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+  <input type="text" name="answer" id="input">
+  <input type="submit" value="Submit" id="submit">
+</form>
